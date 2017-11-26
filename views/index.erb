@@ -1,0 +1,19 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Image Searcher</title>
+</head>
+<body>
+  <h1>Image Searcher</h1>
+  <% @items.each do |item| %>
+    <h2><%= item[:title] %></h2>
+    <% item[:images].each do |img| %>
+      <p>
+      <%= img[:xpath] %> <br />
+      <%= img[:src] %> <br />
+      <img src="<%= img[:src] %>" />
+      </p>
+    <% end %>
+  <% end %>
+</body>
+</html>
