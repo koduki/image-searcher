@@ -1,0 +1,7 @@
+[
+    {
+    "title":"マンガファンタスティック！",
+    "url1":"http://manga-fantastic.net/kakegurui-twin/twin-4-2",
+    "url2":"http://manga-fantastic.net/keijo/k-9-2"
+    }
+]
