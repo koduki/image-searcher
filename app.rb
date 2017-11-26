@@ -6,7 +6,6 @@ require './parser.rb'
 
 get '/' do
     json = JSON.parse(open('input.txt').read)
-    p json
     @items = json.map do |input|
       # extract main contents
       puts "extracting main contents... "
