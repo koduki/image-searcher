@@ -5,15 +5,50 @@
 </head>
 <body>
   <h1>Image Searcher</h1>
-  <% @items.each do |item| %>
-    <h2><%= item[:title] %></h2>
-    <% item[:images].each do |img| %>
-      <p>
-      <%= img[:xpath] %> <br />
-      <%= img[:src] %> <br />
-      <img src="<%= img[:src] %>" />
-      </p>
+  <header>
+    <ul class="nav nav-tabs">
+      <% i=0 %>
+      <% @items.each do |item| %>
+      <% i+=1 %>
+      <li class="nav-item">
+        <a href="#a<%=i%>" class="nav-link bg-primary"><%= item[:title] %></a>
+      </li>
+      <% end %>
+    </ul>
+  </header>
+
+  <div class="tab-content">
+    <% i=0 %>
+    <% @items.each do |item| %>
+      <% i+=1 %>
+      <div id="a<%=i%>" class="tab-pane active">
+      <h2><%= item[:title] %></h2>
+      <% item[:images].each do |img| %>
+        <p>
+        <%= img[:xpath] %> <br />
+        <%= img[:src] %> <br />
+        <img src="<%= img[:src] %>" />
+        </p>
+      <% end %>
+      </div>
     <% end %>
-  <% end %>
+  </div>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+  <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  <style>
+    a:link { color: #ffffff; }
+    a:visited { color: #ffffff; }
+    a:hover { color: #ffffff; }
+    a:active { color: #ffffff; }
+    header{
+    position: fixed;            /* ヘッダーの固定 */
+    top: 0px;                   /* 位置(上0px) */
+    left: 0px;                  /* 位置(右0px) */
+    width: 100%;                /* 横幅100%　*/
+    height: 140px;              /* 縦幅140px */
+    }
+    h1{top:150px;}
+  </style>
 </body>
 </html>
